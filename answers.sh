@@ -1,17 +1,23 @@
 #! /usr/bin/env bash 
 
-datasets='/Users/jayhesselberth/devel/MOLB7621/data-sets'
-# Which state has the highest popultion?
+datasets="$HOME/data-sets"
+# Which state in states.tab.gz has the lowest murder rate?
 
-states="$datasets/states.tab.gz"
+
+
+states="$datasets/misc/states.tab.gz"
 
 answer_1=$(gzcat $states \
     | grep -v '^#' \
-    | cut -f1,2 \
-    | sort -k2n \
-    | tail -n1 \
+    | cut -f1,6 \
+    | sort -k2g \
+    | head -n1 \
     | cut -f1 \
     | sed 's/"//g') 
 
 echo "answer-1: $answer_1"
+#Which state in states.tab.gz has the lowest murder rate?
+
+#Which state in states.tab.gz has the lowest murder rate?
+
 
